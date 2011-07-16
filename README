@@ -1,0 +1,28 @@
+download froyo source from Google
+
+git clone git://android.git.kernel.org/platform/manifest.git -b froyo
+
+and place lights.c to
+hardware/msm7k/liblights
+
+then compile..
+
+luhch  full_dream-user
+make -j4
+
+
+/target/product/dream/system/lib/hw/lights.msm7k.so
+
+to rename lights.<TARGET>.so
+
+ex. SC-02C (japanese sgs2)
+   lights.SC-02C.so
+
+and replace current phone library.
+
+adb remount
+adb push lights.SC-02C.so /system/lib/hw/
+adb reboot
+
+at own your risk!
+enjoy.
